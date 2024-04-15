@@ -310,7 +310,7 @@ defmodule Plug.CSRFProtection do
           conn
 
         mode == :clear_session ->
-          conn |> clear_session()
+          conn |> clear_session() |> dbg
 
         mode == :exception ->
           raise InvalidCSRFTokenError
